@@ -90,7 +90,8 @@ export default function Home() {
       <header className="border-b border-zinc-800 bg-[#18181b] h-14 flex items-center justify-between px-8">
         <div className="flex items-center gap-2.5 font-semibold text-sm tracking-tight">
           <span className="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_8px_#6366f1]" />
-          hyosang.cloud
+          InfoPark Services
+          <span className="text-zinc-600 font-normal">— Personal Infrastructure</span>
         </div>
         <div className="flex items-center gap-1.5 text-xs text-zinc-500">
           <span className={`w-1.5 h-1.5 rounded-full ${connected ? "bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse" : "bg-zinc-600"}`} />
@@ -174,8 +175,17 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-zinc-800 py-5 text-center text-xs text-zinc-600">
-        hyosang.cloud — Personal Server
+      <footer className="border-t border-zinc-800 py-5 text-center text-xs text-zinc-600 space-y-1">
+        <p>
+          <a href="https://hyosang.cloud" className="hover:text-zinc-400 transition-colors">hyosang.cloud</a>
+        </p>
+        <p className="flex items-center justify-center gap-3">
+          <span>© 2026 Hyosang Park</span>
+          <span>·</span>
+          <a href="https://github.com/Infopark-T" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">github.com/Infopark-T</a>
+          <span>·</span>
+          <a href="mailto:hsprk22@gmail.com" className="hover:text-zinc-400 transition-colors">hsprk22@gmail.com</a>
+        </p>
       </footer>
     </div>
   );
