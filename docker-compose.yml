@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "5000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
