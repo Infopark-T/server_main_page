@@ -176,11 +176,10 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-zinc-800 py-5 text-center text-xs text-zinc-600 space-y-1">
-        <p>
-          <a href="https://hyosang.cloud" className="hover:text-zinc-400 transition-colors">hyosang.cloud</a>
-        </p>
         <p className="flex items-center justify-center gap-3">
           <span>© 2026 Hyosang Park</span>
+          <span>·</span>
+          <a href="https://hyosang.cloud" className="hover:text-zinc-400 transition-colors">https://hyosang.cloud</a>
           <span>·</span>
           <a href="https://github.com/Infopark-T" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">github.com/Infopark-T</a>
           <span>·</span>
