@@ -35,6 +35,14 @@ const SERVICES = [
     url: "https://nas.hyosang.cloud",
     label: "nas.hyosang.cloud",
   },
+  {
+    key: "aidoc",
+    icon: "📄",
+    name: "공문서 AI 작성기",
+    desc: "K-에듀파인 공문 초안 자동 생성. RAG 기반으로 과거 공문을 학습해 계획서·보고서 초안 작성.",
+    url: "https://aidoc.hyosang.cloud",
+    label: "aidoc.hyosang.cloud",
+  },
 ];
 
 function StatusBadge({ state }: { state?: string }) {

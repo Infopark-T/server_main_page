@@ -62,6 +62,7 @@ const CONTAINER_MAP: Record<string, string> = {
   portal: "class_portal-app-1",
   oj: "hustoj-frontend-1",
   nas: "nextcloud-nextcloud-1",
+  aidoc: "k-edufine-assistant-app-1",
 };
 
 function getDockerStatus(): Promise<Record<string, string>> {
@@ -70,6 +71,7 @@ function getDockerStatus(): Promise<Record<string, string>> {
       portal: "unknown",
       oj: "unknown",
       nas: "unknown",
+      aidoc: "unknown",
     };
 
     const req = http.request(
