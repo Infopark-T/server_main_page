@@ -4,5 +4,7 @@ services:
     restart: always
     ports:
       - "5000:3000"
+    group_add:
+      - "984"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
