@@ -104,23 +104,31 @@ function getDockerStatus(): Promise<Record<string, string>> {
 
 export async function GET() {
   const encoder = new TextEncoder();
+  let interval: ReturnType<typeof setInterval>;
+
   const stream = new ReadableStream({
     async start(controller) {
       const send = async () => {
-        const [cpu, containers] = await Promise.all([getCpuUsage(), getDockerStatus()]);
-        const data = {
-          cpu,
-          mem: getMemory(),
-          disk: getDisk(),
-          uptime: getUptime(),
-          containers,
-        };
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
+        try {
+          const [cpu, containers] = await Promise.all([getCpuUsage(), getDockerStatus()]);
+          const data = {
+            cpu,
+            mem: getMemory(),
+            disk: getDisk(),
+            uptime: getUptime(),
+            containers,
+          };
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
+        } catch {
+          clearInterval(interval);
+        }
       };
 
       await send();
-      const interval = setInterval(send, 3000);
-      controller.close = (() => clearInterval(interval)) as () => void;
+      interval = setInterval(send, 3000);
+    },
+    cancel() {
+      clearInterval(interval);
     },
   });
 
